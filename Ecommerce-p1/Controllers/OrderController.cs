@@ -7,6 +7,12 @@ using Ecommerce_p1.Models;
 
 namespace Ecommerce_p1.Controllers
 {
+    /*
+        File: OrderController.cs
+        Authors: Yuji Fujiyama, John Allan, Lucy Kang
+        Website: VendComp Electronics
+        Description: controller that routes cart and order page.
+    */
     public class OrderController : Controller
     {
         // GET: Order (displays shopping cart)

@@ -1,4 +1,12 @@
-﻿body {
+﻿/*
+    File: Site.css
+    Authors: Yuji Fujiyama, John Allan, Lucy Kang
+    Website: VendComp Electronics
+    Description: Custom CSS
+*/
+
+/* Site wide */
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -22,3 +30,5 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* Site specific css style divided by its page name */

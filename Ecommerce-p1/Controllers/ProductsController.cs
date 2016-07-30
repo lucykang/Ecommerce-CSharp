@@ -7,6 +7,12 @@ using Ecommerce_p1.Models;
 
 namespace Ecommerce_p1.Controllers
 {
+    /*
+        File: ProductsController.cs
+        Authors: Yuji Fujiyama, John Allan, Lucy Kang
+        Website: VendComp Electronics
+        Description: controller that routes products index, browse and details page.
+    */
     public class ProductsController : Controller
     {
         // GET: Products

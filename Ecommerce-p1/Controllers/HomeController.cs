@@ -6,6 +6,12 @@ using System.Web.Mvc;
 
 namespace Ecommerce_p1.Controllers
 {
+    /*
+        File: HomeController.cs
+        Authors: Yuji Fujiyama, John Allan, Lucy Kang
+        Website: VendComp Electronics
+        Description: controller that routes landing, about and contact page.
+    */
     public class HomeController : Controller
     {
         public ActionResult Index()
