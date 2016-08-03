@@ -7,30 +7,31 @@
     Website: VendComp Electronics
     Description: Landing page
 -->
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="jumbotron" style="background-image: url(Assets/Banner.png); background-size: cover;">
+    <div style="background-color: rgba(57, 57, 57, 0.6); padding: 4px 8px;">
+        <h1>Mappins Café <i class="fa fa-lg fa-coffee"></i></h1>
+        <p class="text-success">@ViewBag.StatusMessage</p>
+        <p class="lead">Mappins Café always has the freshest variety of foods and is always striving to make your experience with us, a good one.</p>
+        <p><a href="@Url.Action("Index", "MenuItems")" class="btn btn-primary btn-lg">Take a look at our Menu &raquo;</a></p>
+    </div>
 </div>
-
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
+    <div class="col-md-4" style="border-right: 1px solid white">
+        <h2>Interested in Us?</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            No matter why you're interested in us, whether it be because you want to take a peek at why people here
+            or whether you're interested in joining our community like many others.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default btn-info" href="@Url.Action("About", "Home")">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4" style="border-right: 1px solid white">
+        <h2>Still Curious?</h2>
+        <p>Read our About page but still have questions or want to speak with one of us? Go ahead and feel free and contact us via any provided medium on our contact page.</p>
+        <p><a class="btn btn-default btn-success" href="@Url.Action("Contact", "Home")">Make Contact &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Interested in where we got this information from?</h2>
+        <p>Concider this a citation reference to where we got our information and pictures from!</p>
+        <p><a class="btn btn-default btn-warning" href="https://mandarinrestaurant.com/">See for yourself &raquo;</a></p>
     </div>
 </div>
