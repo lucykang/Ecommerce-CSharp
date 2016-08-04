@@ -6,10 +6,10 @@
     <title>@ViewBag.Title - VendComp</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    @RenderSection("css", required: false)
 </head>
 <body>
-    <div class="navbar navbar-transparent navbar-fixed-top">
+    <div class="navbar navbar-default navbar-transparent navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,17 +17,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img alt="VendComp" src="~/Assets/long.png" /></a>
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img alt="VendComp" src="~/Assets/Images/Logo.png" /> <span>VendComp</span></a>
             </div>
-            <div class="navbar-collapse collapse navbar-left">
+            <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-lg fa-home"></i> Home</a></li>
+                    <li><a href="@Url.Action("Index", "Products")"><i class="fa fa-lg fa-laptop"></i> Store</a></li>
+                    <li><a href="@Url.Action("About", "Home")"><i class="fa fa-lg fa-info-circle"></i> About</a></li>
+                    <li><a href="@Url.Action("Contact", "Home")"><i class="fa fa-lg fa-envelope-o"></i> Contact</a></li>
+
+                    @Html.Partial("_LoginPartial")
+
+                    @* Shopping Cart link goes here *@
+                    <li><a href="#"><i class="fa fa-lg fa-shopping-cart"></i></a></li>
                 </ul>
             </div>
             <div class="navbar-collapse collapse navbar-right">
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>

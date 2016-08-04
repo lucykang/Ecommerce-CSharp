@@ -32,3 +32,13 @@ textarea {
 }
 
 /* Site specific css style divided by its page name */
+.navbar-brand img {
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+.navbar-brand span {
+    padding-left: 55px;
+    font-weight: bold;
+}
