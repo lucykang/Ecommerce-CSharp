@@ -8,11 +8,14 @@
     Description: Landing page
 -->
 <div class="jumbotron" style="background-image: url(/Assets/Images/Home-Banner.png); background-size: cover;">
-    <div style="background-color: rgba(57, 57, 57, 0.6); padding: 4px 8px; color: #fff">
-        <h1 class="text-center"><img src="~/Assets/Images/Logo.png" style="max-height: 150px" /> VendComp</h1>
+
+    <div class="panel jumbotron-panel">
+        <h1 class="text-center"><img src="~/Assets/Images/Logo.png" style="max-height: 100px" /> VendComp</h1>
         <p class="text-success">@ViewBag.StatusMessage</p>
-        <p class="lead">What do you need your computer for? Whether you need an office computer or a heavy duty gaming computer, we have it all.</p>
-        <p><a href="@Url.Action("Index", "Products")" class="btn btn-primary btn-lg">Find your Computer &raquo;</a></p>
+        <p class="container lead">What do you need your computer for? Whether you need an office computer or a heavy duty gaming computer, we have it all.</p>
+        <div class="text-center">
+            <a href="@Url.Action("Index", "Products")" class="btn btn-submit btn-lg">Find Your Computer &raquo;</a>
+        </div>
     </div>
 </div>
 <div class="row">
@@ -27,11 +30,11 @@
     <div class="col-md-4" style="border-right: 1px solid white">
         <h2>Still Curious?</h2>
         <p>Read our About page but still have questions or want to speak with one of us? Go ahead and feel free and contact us via any provided medium on our contact page.</p>
-        <p><a class="btn btn-default btn-success" href="@Url.Action("Contact", "Home")">Make Contact &raquo;</a></p>
+        <p><a class="btn btn-default btn-warning" href="@Url.Action("Contact", "Home")">Make contact &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Interested in where we got this information from?</h2>
-        <p>Concider this a citation reference to where we got our information and pictures from!</p>
-        <p><a class="btn btn-default btn-warning" href="https://mandarinrestaurant.com/">See for yourself &raquo;</a></p>
+        <h2>Are You Registered?</h2>
+        <p>If you would like to get notifications for our new products and special deals monthly or simply would like to checkout at the end, please register with us!</p>
+        <p><a class="btn btn-default btn-success" href="@Url.Action("Register", "Account")">See for yourself &raquo;</a></p>
     </div>
 </div>

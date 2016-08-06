@@ -6,13 +6,20 @@
 */
 
 /* Site wide */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
+    margin-bottom: 80px;
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    margin-top: 30px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -32,13 +39,72 @@ textarea {
 }
 
 /* Site specific css style divided by its page name */
-.navbar-brand img {
+.navbar-brand > img {
     position: absolute;
-    height: 100%;
+    /*height: 100%;*/
+    height: 40px;
     top: 0;
+    padding-top: 5px;
 }
 
 .navbar-brand span {
     padding-left: 55px;
     font-weight: bold;
+}
+
+
+.btn-submit{
+    background-color: #2ede2b;
+    color: aliceblue;
+}
+
+.btn-info {
+    background-color: #55DDE0 /*#338bde*/;
+}
+
+.btn-warning {
+    background-color: #ECA400;
+}
+
+.btn-success {
+    background-color: #031D44;
+    border-color: #031D44;
+}
+
+.btn-success:hover{
+    background-color: #4f72a8; 
+    border-color: #4f72a8;
+}
+
+.btn-group-md {
+    margin-top: 15px;
+    margin-left: 85px;
+}
+
+/* Sticky footer styles */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 80px;
+  /*background-color: #f5f5f5;*/
+}
+
+/* Landing Page */
+.jumbotron-panel{
+    margin-top: 10px;
+    background-color: rgba(57, 57, 57, 0.6); 
+    padding: 4px 40px 40px 40px;
+    color: #fff;
+}
+
+/* About Page */
+.brands {
+    margin-top: 130px;
+}
+
+/* Contact Page */
+.contact-form {
+    margin-top: 10px;
 }
