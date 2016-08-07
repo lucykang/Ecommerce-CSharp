@@ -26,6 +26,7 @@ namespace Ecommerce_p1
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.css",
+                      "~/Content/simplex.css",
                       "~/Content/site.css"));
         }
     }
