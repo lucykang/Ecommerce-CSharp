@@ -17,8 +17,39 @@ namespace Ecommerce_p1.Controllers
         // GET: Carts
         public ActionResult Index()
         {
-            var carts = db.Carts.Include(c => c.Product);
-            return View(carts.ToList());
+            //var carts = db.Carts.Include(c => c.Product);
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+
+            return View(new { CartItems = cart.GetCartItems(), CartTotal = cart.GetTotal() });
+        }
+
+        // GET: /Carts/AddProduct/5
+        public ActionResult AddToCart(int id) {
+            var addedAlbum = db.Products
+                .Single(product => product.Id == id);
+
+            // Add it to the shopping cart
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+
+            cart.AddToCart(addedAlbum);
+
+            // Go back to the main store page for more shopping
+            return RedirectToAction("Index");
+        }
+
+        // GET: /Carts/RemoveProduct/5
+        public ActionResult RemoveFromCart(int id) {
+            // Remove the item from the cart
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+
+            // Get the name of the album to display confirmation
+            string productName = db.Carts
+                .Single(item => item.RecordId == id).Product.ProductName;
+
+            // Remove from cart
+            int itemCount = cart.RemoveFromCart(id);
+
+            return Json(new { Message = productName + " has been removed from your cart" });
         }
 
         // GET: Carts/Details/5
