@@ -54,6 +54,7 @@ namespace Ecommerce_p1.Models
             // Save changes
             storeDB.SaveChanges();
         }
+
         public int RemoveFromCart(int id)
         {
             // Get the cart
@@ -79,6 +80,31 @@ namespace Ecommerce_p1.Models
             }
             return itemCount;
         }
+
+        public void IncreaseQuantity(int itemId)
+        {
+            var cart = storeDB.Carts
+                .Where(carts => carts.CartId == ShoppingCartId)
+                .Where(products => products.ProductId == itemId)
+                .FirstOrDefault();
+
+            cart.Count++;
+
+            storeDB.SaveChanges();
+        }
+
+        public void DecreaseQuantity(int itemId)
+        {
+            var cart = storeDB.Carts
+                .Where(carts => carts.CartId == ShoppingCartId)
+                .Where(products => products.ProductId == itemId)
+                .FirstOrDefault();
+
+            cart.Count--;
+
+            storeDB.SaveChanges();
+        }
+
         public void EmptyCart()
         {
             var cartItems = storeDB.Carts.Where(
@@ -91,11 +117,13 @@ namespace Ecommerce_p1.Models
             // Save changes
             storeDB.SaveChanges();
         }
+
         public List<Cart> GetCartItems()
         {
             return storeDB.Carts.Where(
                 cart => cart.CartId == ShoppingCartId).ToList();
         }
+
         public int GetCount()
         {
             // Get the count of each item in the cart and sum them up
@@ -105,6 +133,7 @@ namespace Ecommerce_p1.Models
             // Return 0 if all entries are null
             return count ?? 0;
         }
+
         public decimal GetTotal()
         {
             // Multiply album price by count of that album to get 
@@ -117,6 +146,7 @@ namespace Ecommerce_p1.Models
 
             return total ?? decimal.Zero;
         }
+
         public int CreateOrder(Order order)
         {
             decimal orderTotal = 0;
@@ -149,6 +179,7 @@ namespace Ecommerce_p1.Models
             // Return the OrderId as the confirmation number
             return order.OrderId;
         }
+
         // We're using HttpContextBase to allow access to cookies.
         public string GetCartId(HttpContextBase context)
         {
@@ -169,6 +200,7 @@ namespace Ecommerce_p1.Models
             }
             return context.Session[CartSessionKey].ToString();
         }
+
         // When a user has logged in, migrate their shopping cart to
         // be associated with their username
         public void MigrateCart(string userName)

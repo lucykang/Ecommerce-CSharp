@@ -12,6 +12,7 @@ namespace Ecommerce_p1.Controllers
 {
     public class CartsController : Controller
     {
+
         private StoreContext db = new StoreContext();
 
         // GET: Carts
@@ -50,6 +51,22 @@ namespace Ecommerce_p1.Controllers
             int itemCount = cart.RemoveFromCart(id);
 
             return Json(new { Message = productName + " has been removed from your cart" });
+        }
+
+        // Get: Carts/IncreaseProductCount/5
+        public ActionResult IncreaseProductCount(int id)
+        {
+            ShoppingCart.GetCart(this.HttpContext).IncreaseQuantity(id);
+
+            return Json(new { Message = "Quantity Increased!" });
+        }
+
+        // Get: Carts/DecreaseProductCount/5
+        public ActionResult DecreaseProductCount(int id)
+        {
+            ShoppingCart.GetCart(this.HttpContext).DecreaseQuantity(id);
+
+            return Json(new { Message = "Quantity Decreased!" });
         }
 
         // GET: Carts/Details/5
