@@ -21,6 +21,12 @@ namespace Ecommerce_p1.Controllers
             //var carts = db.Carts.Include(c => c.Product);
             var cart = ShoppingCart.GetCart(this.HttpContext);
 
+            //var model = new CartViewModel
+            //{
+            //    CartItems = cart.GetCartItems(),
+            //    CartTotal = cart.GetTotal()
+            //}
+
             return View(new { CartItems = cart.GetCartItems(), CartTotal = cart.GetTotal() });
         }
 
