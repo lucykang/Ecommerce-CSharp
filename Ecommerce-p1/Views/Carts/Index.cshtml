@@ -4,48 +4,78 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Your Shopping Cart</h2>
+<br />
+<div class="col-md-8">
+    <table class="table table-hover table-condensed">
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.BrandName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Count)
+            </th>
+            <th>
+                Total
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th></th>
+        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Product.ProductName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CartId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Count)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateCreated)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("../Products/Details", new { id = item.ProductId })">
+                        <img src="@item.Product.ImageURL" alt="product image" height="100" />
+                    </a>
+                </td>
+                <td>
+                    <a href="@Url.Action("../Products/Details", new { id = item.ProductId })">
+                        @Html.DisplayFor(modelItem => item.Product.ProductName)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.BrandName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Price)
+                </td>
+                <td>
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    @Html.DisplayFor(modelItem => item.Count)
+                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                </td>
+                <td>
+                    @(item.Product.Price * item.Count)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateCreated)
+                </td>
+                <td>
+                    @Html.ActionLink("Remove", "Delete", new { id = item.RecordId })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div class="col-md-push-1 col-md-4">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">Order Total</h3>
+        </div>
+        <div class="panel-body">
+            Panel content
+        </div>
+    </div>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Product.ProductName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CartId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Count)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateCreated)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RecordId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RecordId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RecordId })
-        </td>
-    </tr>
-}
-
-</table>

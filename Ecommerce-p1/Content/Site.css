@@ -17,6 +17,18 @@ body {
     padding-bottom: 20px;
 }
 
+h4 {
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+a > h4:hover {
+    text-decoration: none;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     margin-top: 30px;
@@ -52,7 +64,6 @@ textarea {
     font-weight: bold;
 }
 
-
 .btn-submit{
     background-color: #2ede2b;
     color: aliceblue;
@@ -81,6 +92,15 @@ textarea {
     margin-left: 85px;
 }
 
+.btn-red {
+    background-color: crimson;
+    color: white;
+}
+
+.label-danger {
+    background-color: crimson;
+}
+
 /* Sticky footer styles */
 .footer {
   position: absolute;
@@ -107,4 +127,30 @@ textarea {
 /* Contact Page */
 .contact-form {
     margin-top: 10px;
+}
+
+/* Products Page */
+.thumbnail {
+    background-color: white;
+}
+.thumbnail > .img-responsive {
+    max-height: 300px;
+    height: auto;
+}
+.detail-title {
+    font-size: 20px;
+}
+
+.description {
+    font-size: 15px;
+}
+/* Media size adjustment needed for headings
+.thumbnail > .caption > h4, .thumbnail > .caption > h5{
+    font-size: smaller;
+}
+*/
+
+/* Shopping Cart Page */
+.table>tbody>tr>td {
+    vertical-align: middle;
 }

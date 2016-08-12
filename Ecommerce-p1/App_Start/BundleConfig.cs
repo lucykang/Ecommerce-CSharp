@@ -27,7 +27,7 @@ namespace Ecommerce_p1
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.css",
                       "~/Content/simplex.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css"));
         }
     }
 }

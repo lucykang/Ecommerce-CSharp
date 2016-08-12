@@ -196,6 +196,10 @@
     <Content Include="Assets\Images\HP-logo.png" />
     <Content Include="Assets\Images\Logo.png" />
     <Content Include="Assets\Images\Samsung-logo.png" />
+    <Content Include="Assets\Products\Notebook9pro\Samsung_Notebook9pro.png" />
+    <Content Include="Assets\Products\Notebook9pro\Samsung_Notebook9pro1.png" />
+    <Content Include="Assets\Products\Notebook9pro\Samsung_Notebook9pro2.png" />
+    <Content Include="Assets\Products\Notebook9pro\Samsung_Notebook9Pro_Display.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -281,7 +285,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\Products\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
