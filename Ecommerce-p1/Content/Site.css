@@ -5,6 +5,9 @@
     Description: Custom CSS
 */
 
+/* font family */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Oswald:300,400);
+
 /* Site wide */
 html {
   position: relative;
@@ -15,14 +18,21 @@ body {
     margin-bottom: 80px;
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+h2 {
+    margin-bottom: 25px;
+    font-family: 'Oswald', sans-serif;
 }
 
 h4 {
+    font-family: 'Oswald', sans-serif;
     font-weight: bold;
+    font-weight: 300;
 }
 
 h5 {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 a > h4:hover {
