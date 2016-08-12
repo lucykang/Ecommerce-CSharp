@@ -167,6 +167,11 @@ textarea {
 }
 */
 
+/* Product Details */
+.product-detail-row {
+    margin-top: 25px;
+}
+
 /* Shopping Cart Page */
 .table>tbody>tr>td {
     vertical-align: middle;
