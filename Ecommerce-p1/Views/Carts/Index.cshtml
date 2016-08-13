@@ -1,13 +1,16 @@
 ﻿@model Ecommerce_p1.Models.CartViewModel
-
 @{
     ViewBag.Title = "Index";
     decimal total = 0;
 }
 
+@section scripts {
+    <script src="~/Scripts/AjaxQuantity.js"></script>
+}
+
 <h2>Your Shopping Cart</h2>
 <br />
-<div class="col-sm-8 col-md-8">
+<div class="col-sm-8">
     <table class="table table-hover table-condensed">
         @*<tr>
             <th></th>
@@ -49,15 +52,15 @@
                     @Html.DisplayFor(modelItem => item.Product.BrandName)
                 </td>
                 <td>
-                    $ @Html.DisplayFor(modelItem => item.Product.Price)
+                    $@Html.DisplayFor(modelItem => item.Product.Price)
                 </td>
                 <td>
-                    <a href="/Carts/IncreaseProductCount/@item.ProductId"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-                    @Html.DisplayFor(modelItem => item.Count)
-                    <a href="/Carts/DecreaseProductCount/@item.ProductId"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
-</td>
+                    <a href="#" onclick="increaseQuantity(@item.ProductId); return false;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a><br />
+                    <span id="Quantity_@item.ProductId">@Html.DisplayFor(modelItem => item.Count)</span><br />
+                    <a href="#" onclick="decreaseQuantity(@item.ProductId); return false;"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
+                </td>
                 <td>
-                    @(item.Product.Price * item.Count)
+                    $@(item.Product.Price * item.Count)
                     @{total += item.Product.Price * item.Count;}
                 </td>
                 <td>
@@ -70,7 +73,7 @@
         }
     </table>
 </div>
-<div class="col-xs-push-3 col-sm-push-4 col-md-push-0 col-xs-7 col-sm-5 col-md-4">
+<div class="col-xs-7 col-sm-5 col-md-4">
     <div class="panel panel-success">
         <div class="panel-heading text-center">
             <h2 class="panel-title" style="font-size: 20px">Order Total</h2>

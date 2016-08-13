@@ -59,20 +59,30 @@ namespace Ecommerce_p1.Controllers
             return Json(new { Message = productName + " has been removed from your cart" });
         }
 
-        // Get: Carts/IncreaseProductCount/5
+        [HttpPost]
+        // Post: Carts/IncreaseProductCount/5
         public ActionResult IncreaseProductCount(int id)
         {
-            ShoppingCart.GetCart(this.HttpContext).IncreaseQuantity(id);
+            var cart = ShoppingCart.GetCart(this.HttpContext);
 
-            return Json(new { Message = "Quantity Increased!" });
+            cart.IncreaseQuantity(id);
+            int count = cart.GetCount();
+
+            return Json(new { Message = "Quantity Increased!", Quantity = count});
         }
 
-        // Get: Carts/DecreaseProductCount/5
+        [HttpPost]
+        // Post: Carts/DecreaseProductCount/5
         public ActionResult DecreaseProductCount(int id)
         {
-            ShoppingCart.GetCart(this.HttpContext).DecreaseQuantity(id);
+            var cart = ShoppingCart.GetCart(this.HttpContext);
 
-            return Json(new { Message = "Quantity Decreased!" });
+            if(cart.GetCount() > 1)
+                cart.DecreaseQuantity(id);
+
+            int count = cart.GetCount();
+
+            return Json(new { Message = "Quantity Decreased!", Quantity = count });
         }
 
         // GET: Carts/Details/5
