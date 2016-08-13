@@ -13,5 +13,11 @@ namespace Ecommerce_p1.Controllers
         {
             return View();
         }
+
+        // GET: Checkout/Confirm
+        public ActionResult Confirm()
+        {
+            return View();
+        }
     }
 }

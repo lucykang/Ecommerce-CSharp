@@ -298,6 +298,7 @@
     <Content Include="Views\OrderDetails\Index.cshtml" />
     <Content Include="Views\Checkout\Index.cshtml" />
     <Content Include="Views\Carts\Index.cshtml" />
+    <Content Include="Views\Checkout\Confirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
