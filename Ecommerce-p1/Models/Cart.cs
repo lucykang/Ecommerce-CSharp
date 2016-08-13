@@ -11,8 +11,8 @@ namespace Ecommerce_p1.Models
         [Key]
         public int RecordId { get; set; }
 
-        [Required]
-        [StringLength(10)]
+        //[Required]
+        //[StringLength(10)]
         public string CartId { get; set; }
 
         public int Count { get; set; }

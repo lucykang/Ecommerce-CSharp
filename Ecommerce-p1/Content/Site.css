@@ -20,6 +20,7 @@ body {
     padding-bottom: 20px;
     font-family: 'Open Sans', sans-serif;
 }
+
 h2 {
     margin-bottom: 25px;
     font-family: 'Oswald', sans-serif;
@@ -51,13 +52,6 @@ a > h4:hover {
 */
 .dl-horizontal dt {
     white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
 }
 
 /* Site specific css style divided by its page name */

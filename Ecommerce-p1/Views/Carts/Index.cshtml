@@ -1,8 +1,97 @@
-﻿@model Ecommerce_p1.Models.Cart
+﻿@model Ecommerce_p1.Models.CartViewModel
 
 @{
     ViewBag.Title = "Index";
+    decimal total = 0;
 }
 
-<h2>Index</h2>
+<h2>Your Shopping Cart</h2>
+<br />
+<div class="col-sm-8 col-md-8">
+    <table class="table table-hover table-condensed">
+        @*<tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.BrandName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Count)
+            </th>
+            <th>
+                Total
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th></th>
+        </tr>*@
+
+        @foreach (var item in Model.CartItems)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("../Products/Details", new { id = item.ProductId })">
+                        <img src="@item.Product.ImageURL" alt="product image" height="100" />
+                    </a>
+                </td>
+                <td>
+                    <a href="@Url.Action("../Products/Details", new { id = item.ProductId })">
+                        @Html.DisplayFor(modelItem => item.Product.ProductName)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.BrandName)
+                </td>
+                <td>
+                    $ @Html.DisplayFor(modelItem => item.Product.Price)
+                </td>
+                <td>
+                    <a href="/Carts/IncreaseProductCount/@item.ProductId"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                    @Html.DisplayFor(modelItem => item.Count)
+                    <a href="/Carts/DecreaseProductCount/@item.ProductId"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
+</td>
+                <td>
+                    @(item.Product.Price * item.Count)
+                    @{total += item.Product.Price * item.Count;}
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateCreated)
+                </td>
+                <td>
+                    @Html.ActionLink("Remove", "Delete", new { id = item.RecordId })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div class="col-xs-push-3 col-sm-push-4 col-md-push-0 col-xs-7 col-sm-5 col-md-4">
+    <div class="panel panel-success">
+        <div class="panel-heading text-center">
+            <h2 class="panel-title" style="font-size: 20px">Order Total</h2>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                <p>Cart Total : </p>
+                <p>HST (13%) : </p>
+                <p>Grand Total : </p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                <p>$ @total</p>
+                <p>$ @( Math.Round(total * Convert.ToDecimal(0.13), 2) )</p>
+                <p>$ @( Math.Round(total + (total * Convert.ToDecimal(0.13)),2))</p>
+            </div>
+        </div>
+    </div>
+    <div class="btn-group btn-group-justified">
+            <a href="/Checkout" role="button" class="btn btn-warning btn-md">
+                <span class="glyphicon glyphicon-thumbs-up"></span>  Proceed To Check Out
+            </a>
+    </div>
+</div>
 

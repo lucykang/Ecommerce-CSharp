@@ -10,6 +10,7 @@ namespace Ecommerce_p1.Models
     {
 
         StoreContext storeDB = new StoreContext();
+
         string ShoppingCartId { get; set; }
         public const string CartSessionKey = "CartId";
 
