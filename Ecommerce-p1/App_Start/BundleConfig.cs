@@ -20,6 +20,7 @@ namespace Ecommerce_p1
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/bootstrap.min.js",
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
