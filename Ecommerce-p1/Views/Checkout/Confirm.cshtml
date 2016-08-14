@@ -1,7 +1,50 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Confirm";
 }
 
-<h2>Confirm</h2>
+<h2>Checkout Confirmation</h2>
 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Items</h3>
+                </div>
+                <h5>User Shopping Cart Item(s) go here</h5>
+                <p>Item</p>
+                <p>Item</p>
+                <p>Item</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Shipping Address</h3>
+                    </div>
+                    <h5>User Shipping information goes here</h5>
+                    <p>Address</p>
+                    <p>Address</p>
+                    <p>Address</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Order Total and Payment Method</h3>
+                        </div>
+                        <h5>User's Order total and payment method goes here</h5>
+                        <p>Order</p>
+                        <p>Order</p>
+                        <p>Order</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn-group btn-group-justified">
+        <a href="/Checkout/complete" role="button" class="btn btn-success btn-md">Complete Order! </a>
+    </div>
+</div> <!-- /container -->
