@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Ecommerce_p1.Controllers
 {
+    [Authorize]
     public class CheckoutController : Controller
     {
         // GET: Checkout
