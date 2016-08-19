@@ -68,25 +68,40 @@ a > h4:hover {
     font-weight: bold;
 }
 
+.btn-custom {
+    margin-left: 100px;
+}
+
 .btn-submit{
     background-color: #2ede2b;
     color: aliceblue;
 }
 
-.btn-info {
+.btn-cyan {
     background-color: #55DDE0 /*#338bde*/;
+    color: white;
 }
 
-.btn-warning {
+.btn-yellow {
     background-color: #ECA400;
+    color: white;
 }
 
-.btn-success {
+.btn-navy {
     background-color: #031D44;
     border-color: #031D44;
+    color: white;
 }
 
-.btn-success:hover{
+.btn-cyan:hover {
+    background-color: aquamarine;
+}
+
+.btn-yellow:hover {
+    background-color: yellowgreen;
+}
+
+.btn-navy:hover {
     background-color: #4f72a8; 
     border-color: #4f72a8;
 }

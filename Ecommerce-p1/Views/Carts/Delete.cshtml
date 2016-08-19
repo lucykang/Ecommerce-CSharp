@@ -14,43 +14,63 @@
 
 <h2>Delete</h2>
 
-<h3></h3>
 <div>
-    <h4>Are you sure you want to delete this product from shopping cart?</h4>
+    <h3 style="font-size:15px;">Are you sure you want to delete this product from shopping cart?</h3>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Product.ProductName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product.ProductName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Count)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Count)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Product.Price)
-        </dt>
-
-        <dd>
-            @{total += Model.Product.Price * Model.Count;}
-            $ @total
-        </dd>
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-red" /> |
-            @Html.ActionLink("Back to List", "Index")
+    <div class="row">
+        <div class="col-md-4">
+            <img height="200" src="@Html.DisplayFor(model => model.Product.ImageURL)" />
         </div>
-    }
+        <div class="col-md-8">
+            <br />
+            <br />
+            <dl class="dl-horizontal" style="font-size: 15px;">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Product.ProductName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Product.ProductName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Product.BrandName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Product.BrandName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Count)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Count)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Product.Price)
+                </dt>
+
+                <dd>
+                    @{total += Model.Product.Price * Model.Count;}
+                    $ @total
+                </dd>
+            </dl>
+            <div class="btn-custom">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-red" />
+                        <a href="@Url.Action("Index", "Carts")" class="btn btn-submit">Back to Cart &raquo;</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    
+
 </div>

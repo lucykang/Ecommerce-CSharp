@@ -19,9 +19,11 @@ namespace Ecommerce_p1.Models
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "Product")]
         public string ProductName { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Brand")]
         public string BrandName { get; set; }
 
         [Required]
