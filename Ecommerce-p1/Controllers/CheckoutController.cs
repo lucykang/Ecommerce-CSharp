@@ -12,7 +12,7 @@ namespace Ecommerce_p1.Controllers
         // GET: Checkout
         public ActionResult Index()
         {
-            if(Request.IsAuthenticated)
+            if(!Request.IsAuthenticated)
             {
                 Response.Redirect(Url.Action("Login", "Account"));
             }
