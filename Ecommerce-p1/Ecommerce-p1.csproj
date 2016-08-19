@@ -195,8 +195,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\Acer-Logo.png" />
+    <Content Include="Assets\Images\Dell_Logo.png" />
     <Content Include="Assets\Images\Home-Banner.png" />
     <Content Include="Assets\Images\HP-logo.png" />
+    <Content Include="Assets\Images\Logo Asus.png" />
     <Content Include="Assets\Images\Logo.png" />
     <Content Include="Assets\Images\Samsung-logo.png" />
     <Content Include="Assets\Products\Aspire\Acer_Aspire.png" />
