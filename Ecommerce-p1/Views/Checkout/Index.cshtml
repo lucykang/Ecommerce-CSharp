@@ -12,7 +12,7 @@
 <div class="container">
 
     <div class="masthead">
-        <h3 class="muted">VendComp</h3>
+        <h3 class="muted">Order Information</h3>
 
         @using (Html.BeginForm())
             {
@@ -98,17 +98,18 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Payment Methods</h3>
                         </div>
-                        <div class="panel-body collapse in">
-                            <div class="col-sm-12">
-                                <div class="alert alert-error">
-                                    All fields are required.
-                                </div>
-                                <input type="radio" required name="paymentType" value="credit"> Credit<br />
-                                <input type="radio" required name="paymentType" value="debit"> Debit <br />
-                                <input type="radio" required name="paymentType" value="paypal"> Paypal <br />
-
-                                <button type="submit" class="btn btn-primary">Checkout</button>
+                        <div class="panel-body text-center">
+                            <div class="text-center">
+                                <label class="radio-inline"><input type="radio" required name="paymentType" value="credit"> Visa</label>
+                                <label class="radio-inline"><input type="radio" required name="paymentType" value="credit"> Mastercard </label>
+                                <label class="radio-inline"><input type="radio" required name="paymentType" value="debit"> Debit</label>
+                                <label class="radio-inline"><input type="radio" required name="paymentType" value="paypal"> Paypal</label>
                             </div>
+                            <br /><br />
+                            <img src="~/Assets/Images/Visa.svg.png" alt="visa" height="50px" />
+                            <img src="~/Assets/Images/mastercard-logo-big.gif" alt="master" height="50px" />
+                            <img src="~/Assets/Images/interac-logo.jpg" alt="debit" height="50px" />
+                            <img src="~/Assets/Images/PayPal-Logo.png" alt="paypal" height="50px" />
                         </div>
                     </div>
                 </div>
