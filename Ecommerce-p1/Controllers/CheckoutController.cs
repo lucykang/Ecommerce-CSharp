@@ -39,8 +39,7 @@ namespace Ecommerce_p1.Controllers
                 var cart = ShoppingCart.GetCart(this.HttpContext);
                 cart.CreateOrder(order);
 
-                return RedirectToAction("Complete",
-                    new { id = order.OrderId });
+                return RedirectToAction("Confirm",  new { id = order.OrderId });
             }
             catch
             {
@@ -50,26 +49,27 @@ namespace Ecommerce_p1.Controllers
         }
 
         // POST: Checkout/Confirm
-        [HttpPost]
-        public ActionResult Confirm(FormCollection values)
+        public ActionResult Confirm(int id)
         {
-            var cart = ShoppingCart.GetCart(HttpContext);
+            var order = (from orderList in db.Orders
+                         where orderList.OrderId == id
+                         select orderList).FirstOrDefault();
+
+            var cart = ShoppingCart.GetCart(this.HttpContext);
 
             var model = new CartOrderViewModel()
             {
                 CartItems = cart.GetCartItems(),
                 CartTotal = cart.GetTotal(),
 
-                Email = Request.Form["email"],
-                Name = Request.Form["name"],
-                Street = Request.Form["street"],
-                Apt = Request.Form["st2"],
-                City = Request.Form["city"],
-                Province = Request.Form["state"],
-                Postal = Request.Form["zip"],
-                Phone = Request.Form["Phonecode"] + Request.Form["phone"],
-                Country = Request.Form["country"],
-                PaymentMethod = Request.Form["paymentType"]
+                Email = order.Email,
+                Name = order.Firstname,
+                Street = order.Address,
+                City = order.City,
+                Province = order.Province,
+                Postal = order.PostalCode,
+                Phone = order.Phone,
+                Country = order.Country,
             };
 
             return View(model);
