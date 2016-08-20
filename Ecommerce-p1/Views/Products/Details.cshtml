@@ -3,6 +3,12 @@
 @{
     ViewBag.Title = "Details";
 }
+<!--
+    File: Products/Details.cshtml
+    Authors: Yuji Fujiyama, John Allan, Lucy Kang
+    Website: VendComp Electronics
+    Description: This page displays the detailed information about the product.
+-->
 
 <h2>@Model.BrandName @Model.ProductName </h2>
 <hr />
@@ -41,64 +47,3 @@
         <a class="btn btn-red" href="@Url.Action("Index", new { href = Request.UrlReferrer }))">Back</a>
     </div>
 </div>
-
-@*
-    <div>
-        <h4>Product</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ProductName)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.BrandName)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.BrandName)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Type)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Type)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Price)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Price)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.ImageURL)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ImageURL)
-            </dd>
-
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-*@
