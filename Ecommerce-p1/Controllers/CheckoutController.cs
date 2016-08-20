@@ -48,7 +48,7 @@ namespace Ecommerce_p1.Controllers
             }
         }
 
-        // POST: Checkout/Confirm
+        // POST: Checkout/Confirm/:id
         public ActionResult Confirm(int id)
         {
             var order = (from orderList in db.Orders
@@ -75,38 +75,6 @@ namespace Ecommerce_p1.Controllers
             return View(model);
         }
 
-        // GET: Checkout/Purchase
-        public ActionResult Purchase(CartOrderViewModel orderModel)
-        {
-            //Order order = new Order()
-            //{
-            //    Firstname = orderModel.Name,
-            //    Lastname = orderModel.Name,
-            //    Address = orderModel.Street,
-            //    City = orderModel.City,
-            //    Country = orderModel.Country,
-            //    Email = orderModel.Email,
-            //    Phone = orderModel.Phone,
-            //    PostalCode = orderModel.Postal,
-            //    Province = orderModel.Province,
-            //    Total = orderModel.CartTotal,
-            //    Username = User.Identity.Name,
-            //    OrderDate = DateTime.Now
-            //};
-
-
-            //// save the order
-            //db.Orders.Add(order);
-            ////db.SaveChanges();
-
-            //// process the order
-            //var cart = ShoppingCart.GetCart(this.HttpContext);
-            //cart.CreateOrder(order);
-
-            //return RedirectToAction("Complete", new { id = order.OrderId });
-            return RedirectToAction("Complete");
-        }
-
         // GET: Checkout/Complete
         public ActionResult Complete(int? id)
         {
@@ -114,6 +82,10 @@ namespace Ecommerce_p1.Controllers
             {
                 return View(224);
             }
+
+            var cart = ShoppingCart.GetCart(HttpContext);
+            cart.EmptyCart();
+
             // Validate customer owns this order
             bool isValid = db.Orders.Any(
                 o => o.OrderId == id &&

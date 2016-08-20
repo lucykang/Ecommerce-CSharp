@@ -176,7 +176,7 @@ namespace Ecommerce_p1.Models
             // Save the order
             storeDB.SaveChanges();
             // Empty the shopping cart
-            EmptyCart();
+            //EmptyCart();
             // Return the OrderId as the confirmation number
             return order.OrderId;
         }
