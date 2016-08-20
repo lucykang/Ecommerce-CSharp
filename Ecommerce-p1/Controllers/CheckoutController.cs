@@ -62,6 +62,7 @@ namespace Ecommerce_p1.Controllers
                 CartItems = cart.GetCartItems(),
                 CartTotal = cart.GetTotal(),
 
+                OrderId = id,
                 Email = order.Email,
                 Name = order.Firstname,
                 Street = order.Address,

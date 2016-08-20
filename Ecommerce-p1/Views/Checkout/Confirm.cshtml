@@ -76,6 +76,6 @@
     <div class="text-center">
         @*@using (Html.BeginForm("Purchase"))
         {*@
-        <div class="btn btn-yellow">@Html.ActionLink("Confirm Order", "Purchase", new { order = Model })</div>
+        <div class="btn btn-yellow">@Html.ActionLink("Confirm Order", "Complete", new { id = Model.OrderId })</div>
     </div>
 </div> <!-- /container -->

@@ -8,6 +8,7 @@ namespace Ecommerce_p1.Models
     public class CartOrderViewModel : CartViewModel
     {
 
+        public int OrderId { get; set; }
         public string Email { get; set; }
         public string Name { get; set; }
         public string Street { get; set; }
