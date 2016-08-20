@@ -200,9 +200,13 @@
     <Content Include="Assets\Images\Dell_Logo.png" />
     <Content Include="Assets\Images\Home-Banner.png" />
     <Content Include="Assets\Images\HP-logo.png" />
+    <Content Include="Assets\Images\interac-logo.jpg" />
     <Content Include="Assets\Images\Logo Asus.png" />
     <Content Include="Assets\Images\Logo.png" />
+    <Content Include="Assets\Images\mastercard-logo-big.gif" />
+    <Content Include="Assets\Images\PayPal-Logo.png" />
     <Content Include="Assets\Images\Samsung-logo.png" />
+    <Content Include="Assets\Images\Visa.svg.png" />
     <Content Include="Assets\Products\Aspire\Acer_Aspire.png" />
     <Content Include="Assets\Products\iMac\iMac.jpg" />
     <Content Include="Assets\Products\Inspiron17\Inspiron17.jpg" />
@@ -284,7 +288,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Carts\Delete.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
-    <Content Include="Views\Products\Delete.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
