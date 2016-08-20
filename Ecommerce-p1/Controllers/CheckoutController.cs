@@ -17,16 +17,41 @@ namespace Ecommerce_p1.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            if(!Request.IsAuthenticated)
-            {
-                Response.Redirect(Url.Action("Login", "Account"));
-            }
             return View();
         }
 
-        // GET: Checkout/Confirm
-        //[HttpPost]
-        public ActionResult Confirm()
+        [HttpPost]
+        public ActionResult Index(FormCollection values)
+        {
+            var order = new Order();
+            TryUpdateModel(order);
+
+            try
+            {
+                order.Username = User.Identity.Name;
+                order.OrderDate = DateTime.Now;
+
+                //Save Order
+                db.Orders.Add(order);
+                db.SaveChanges();
+
+                //Process the order
+                var cart = ShoppingCart.GetCart(this.HttpContext);
+                cart.CreateOrder(order);
+
+                return RedirectToAction("Complete",
+                    new { id = order.OrderId });
+            }
+            catch
+            {
+                //Invalid - redisplay with errors
+                return View(order);
+            }
+        }
+
+        // POST: Checkout/Confirm
+        [HttpPost]
+        public ActionResult Confirm(FormCollection values)
         {
             var cart = ShoppingCart.GetCart(HttpContext);
 
