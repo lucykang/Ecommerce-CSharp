@@ -23,10 +23,15 @@
                     @foreach (var item in Model.CartItems)
                     {
                         <div class="row" style="height: 50px; margin-left: 10px;">
-                            <img src="@item.Product.ImageURL" style="float: left; height: 100%;" />
-                            <p class="text-muted">$@item.Product.Price x @item.Count</p>
-                            <p>Total: $@(item.Product.Price * item.Count)</p>
+                            <div class="col-xs-4">
+                                <img src="@item.Product.ImageURL" style="float: left; height: 50px;" />
+                            </div>
+                            <div class="col-xs-8">
+                                <p class="text-muted">$@item.Product.Price x @item.Count</p>
+                                <p>Total: $@(item.Product.Price * item.Count)</p>
+                            </div>
                         </div>
+                        <hr/>
                     }
                 </div>
             </div>
@@ -38,7 +43,7 @@
                         <h2 class="panel-title" style="font-size: 20px">Shipping Information</h2>
                     </div>
                     <div class="panel-body">
-                        <h5>Address</h5>
+                        <h5 style="font-weight: bold;">Address</h5>
                         <p>
                             @Model.Street
                             @if (Model.Apt != null)
@@ -51,7 +56,7 @@
                         <p>@Model.Postal, @Model.Country</p>
                     </div>
                     <div class="panel-body">
-                        <h5>Contact Information: </h5>
+                        <h5 style="font-weight: bold;">Contact Information</h5>
                         <p>Email: @Model.Email</p>
                         <p>Phone: @Model.Phone</p>
                     </div>
@@ -61,12 +66,10 @@
                 <div class="col-sm-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h2 class="panel-title" style="font-size: 20px">Order Total and Payment Method</h2>
+                            <h2 class="panel-title" style="font-size: 20px">Order Total</h2>
                         </div>
                         <div class="panel-body">
-                            <h5>Please Confirm:</h5>
-                            <p>Total Amount: $@Model.CartTotal</p>
-                            @*<p>Payment Method: @Model.PaymentMethod</p>*@
+                            <p style="font-weight: bold; font-size: 15px;">Total Amount: $@Model.CartTotal</p>
                         </div>
                     </div>
                 </div>
@@ -74,8 +77,6 @@
         </div>
     </div>
     <div class="text-center">
-        @*@using (Html.BeginForm("Purchase"))
-        {*@
         <div class="btn btn-yellow">@Html.ActionLink("Confirm Order", "Complete", new { id = Model.OrderId })</div>
     </div>
 </div> <!-- /container -->
